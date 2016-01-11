@@ -3,7 +3,7 @@ require 'open-uri'
 class ApisController < ApplicationController
 
   def weather
-    address = "http://api.openweathermap.org/data/2.5/weather?q=chicago&units=imperial"
+    address = "https://api.forecast.io/forecast/6dbe98374cc5b8f9ea63d5ec73de9c04/42.056459,-87.675267"
     uri = URI.parse(URI.escape(address))
     string = open(uri).read
     @weather = JSON.parse(string)
@@ -17,7 +17,7 @@ class ApisController < ApplicationController
   end
 
   def spotify
-    address = "https://api.spotify.com/v1/search?q=u2&type=album"
+    address = "https://api.spotify.com/v1/search?q=katy+perry&type=album"
     uri = URI.parse(URI.escape(address))
     string = open(uri).read
     @spotify = JSON.parse(string)
